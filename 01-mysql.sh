@@ -35,8 +35,8 @@ VALIDATE()
 }
 
 CHECK_ROOT
-dnf list installed mysql
-if [ S? -eq 0 ]
+dnf list installed mysql &>>$LOGFILE
+if [ $? -eq 0 ]
 then
     echo -e "$R mysql is already insatlled" | tee -a $LOGFILE
 else
