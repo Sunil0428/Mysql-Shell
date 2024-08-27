@@ -36,11 +36,6 @@ VALIDATE()
 
 CHECK_ROOT
 
-if [ $# -eq 0 ]
-    then 
-    USAGE
-fi
-
 dnf install mysql-server -y &>>$LOGFILE
 VALIDATE $? "Validating mysql installation"
 systemctl enable mysqld &>>$LOGFILE
