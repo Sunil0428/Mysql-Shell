@@ -30,8 +30,8 @@ VALIDATE()
 }
 CHECK_ROOT
 
-dnf module disable nodejs -y &>>LOGFILE
+dnf module disable nodejs -y &>>$LOGFILE
 VALIDATE $? "Disabling nodejs"
 
-dnf module enable nodejs:20 -y &>>LOGFILE
+dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "Enabling nodejs"
