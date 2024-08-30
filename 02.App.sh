@@ -1,8 +1,8 @@
 #!/bin/bash
-LOGDIRECTORY="/var/log/shellogs/"
+LOGDIRECTORY="/var/log/shellogs"
 FILE=$( echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d:%H:%M:%s)
-LOGFILE="$LOGDIRECTORY/$FILE_$TIMESTAMP"
+LOGFILE="$LOGDIRECTORY/$FILE_$TIMESTAMP.log"
 
 echo " $LOGFILE"
 
