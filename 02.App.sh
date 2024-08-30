@@ -6,6 +6,8 @@ LOGFILE="$LOGDIRECTORY/$FILE_$TIMESTAMP.log"
 
 echo " $LOGFILE"
 
+mkdir -p $LOGDIRECTORY
+
 USER=$(id -u)
 R="\e[32m"
 Y="\e[33m"
