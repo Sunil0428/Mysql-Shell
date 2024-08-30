@@ -44,7 +44,7 @@ VALIDATE $? "Installing nodejs"
 id expense
 
 if [ $? -eq 0 ]
-Then 
+then 
     echo "expense user is already present"
 else
     echo "expense user is being created"
