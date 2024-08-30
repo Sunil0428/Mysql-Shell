@@ -4,6 +4,8 @@ FILE=$( echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d:%H:%M:%s)
 LOGFILE="$LOGDIRECTORY/$FILE_$TIMESTAMP"
 
+echo " $LOGFILE"
+
 USER=$(id -u)
 R="\e[32m"
 Y="\e[33m"
@@ -30,3 +32,6 @@ CHECK_ROOT
 
 dnf module disable nodejs -y &>>LOGFILE
 VALIDATE $? "Disabling nodejs"
+
+dnf module enable nodejs:20 -y &>>LOGFILE
+VALIDATE $? "Enabling nodejs"
