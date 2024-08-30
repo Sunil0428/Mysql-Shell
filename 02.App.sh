@@ -48,4 +48,6 @@ then
     echo "expense user is already present"
 else
     echo "expense user is being created"
+    useradd expense
+    VALIDATE $? "Expense User Creation"
 fi
