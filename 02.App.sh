@@ -45,7 +45,7 @@ id expense
 
 if [ $? -eq 0 ]
 Then 
-    echo ("expense user is already present")
+    echo "expense user is already present"
 
 else
     echo "expense user is being created" 
