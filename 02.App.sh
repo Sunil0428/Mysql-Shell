@@ -41,7 +41,7 @@ VALIDATE $? "Enabling nodejs"
 dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs"
 
-id expense
+id expense &>>$LOGFILE
 
 if [ $? -eq 0 ]
 then 
@@ -51,3 +51,12 @@ else
     useradd expense
     VALIDATE $? "Expense User Creation"
 fi
+mkdir -p /app
+VALIDATE $? "app directory Creation"
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip&>>$LOGFILE
+VALIDATE $? "getting the app code"
+
+cd /app
+rm -rf /app/*
+VALIDATE $? "clearing the app directory"
