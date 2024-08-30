@@ -47,7 +47,7 @@ if [ $? -eq 0 ]
 Then 
     echo "expense user is already present"
 else
-    echo "expense user is being created" 
+    echo "expense user is being created"
     useradd expense
     VALIDATE $? "expense user creation"
 fi
