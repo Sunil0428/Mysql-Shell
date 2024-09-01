@@ -60,7 +60,7 @@ VALIDATE $? "getting the app code"
 cd /app
 rm -rf /app/*
 VALIDATE $? "clearing the app directory"
-unzip /tmp/backend.zip
+unzip /tmp/backend.zip&>>$LOGFILE
 VALIDATE $? "unzipping the code in app directory"
 npm install&>>$LOGFILE
 VALIDATE $? "installing npm in app directory"
